@@ -4,6 +4,8 @@ module.exports = {
   entities: [process.env.ENTITY_PATH],
   synchronize: true,
   extra: {
-    ssl: process.env.DB_SSL || false,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   },
 };
