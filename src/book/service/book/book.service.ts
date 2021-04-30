@@ -29,19 +29,19 @@ export class BookService {
         .orWhere('isbn like :busca');
     }
 
-    if (query.anoinicial > 0 && query.anofinal > 0) {
-      booksQuery.andWhere('year BETWEEN :anoinicial AND :anofinal');
+    if (query.anoInicial > 0 && query.anoFinal > 0) {
+      booksQuery.andWhere('year BETWEEN :anoInicial AND :anoFinal');
     }
 
     const books: BookEntity[] = await booksQuery
       .setParameters({
         busca: `%${query.busca}%`,
-        anoinicial: query.anoinicial,
-        anofinal: query.anofinal,
+        anoInicial: query.anoInicial,
+        anoFinal: query.anoFinal,
       })
       .orderBy(query.sorting || 'year', 'ASC')
-      .offset(query.SkipCount || 0)
-      .limit(query.MaxResultCount || 10)
+      .offset(query.skipCount || 0)
+      .limit(query.maxResultCount || 10)
       .getMany();
 
     return {

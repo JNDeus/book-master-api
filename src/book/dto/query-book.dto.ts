@@ -8,11 +8,11 @@ export class QueryBookDto {
 
   @IsInt()
   @ApiProperty({ required: false })
-  anoinicial: number;
+  anoInicial: number;
 
   @IsInt()
   @ApiProperty({ required: false })
-  anofinal: number;
+  anoFinal: number;
 
   @IsString()
   @ApiProperty({ required: false })
@@ -20,9 +20,9 @@ export class QueryBookDto {
 
   @IsInt()
   @ApiProperty({ required: false })
-  MaxResultCount: number;
+  maxResultCount: number;
 
   @IsInt()
   @ApiProperty({ required: false })
-  SkipCount: number;
+  skipCount: number;
 }

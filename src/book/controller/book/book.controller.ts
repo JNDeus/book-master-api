@@ -31,7 +31,7 @@ export class BookController {
   findAll(@Query() query: QueryBookDto): Promise<PaginatedBooksResultDto> {
     return this.booksService.findAll({
       ...query,
-      MaxResultCount: query.MaxResultCount > 10 ? 10 : query.MaxResultCount,
+      maxResultCount: query.maxResultCount > 10 ? 10 : query.maxResultCount,
     });
   }
 
