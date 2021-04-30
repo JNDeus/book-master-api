@@ -1,5 +1,6 @@
 import { IsInt, IsOptional, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+import { Type } from 'class-transformer';
 
 export class QueryBookDto {
   @IsString()
@@ -8,11 +9,13 @@ export class QueryBookDto {
   busca: string;
 
   @IsInt()
+  @Type(() => Number)
   @IsOptional()
   @ApiProperty({ required: false })
   anoInicial: number;
 
   @IsInt()
+  @Type(() => Number)
   @IsOptional()
   @ApiProperty({ required: false })
   anoFinal: number;
