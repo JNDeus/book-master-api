@@ -2,7 +2,7 @@
 
 API para utilização em um CRUD de livros.
 
-A API disponibiliza ferramentas para cadatros, atualização, busca e remoção de livros de um banco de dados.
+A API disponibiliza ferramentas para cadastros, atualização, busca e remoção de livros de um banco de dados.
 
 ## Installation
 
