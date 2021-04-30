@@ -85,28 +85,4 @@ describe('BookService', () => {
 
     expect(result).toMatchObject({ raw: [], affected: 1 });
   });
-
-  // it('should find a books', async () => {
-  //   const testBook: BookEntity = {
-  //     id: '8defd9c5-b079-4227-806d-7283b951c52d',
-  //     title: 'Prazeres Malditos',
-  //     isbn: '9788532522498',
-  //     author: 'Laurell K. Hamilton',
-  //     publisher: 'Rocco',
-  //     year: 2013,
-  //     language: 'Portugês Brasileiro',
-  //     weight: 200,
-  //     length: 25,
-  //     width: 5,
-  //     height: 15,
-  //   };
-  //
-  //   jest.spyOn(bookRepository, 'find').mockImplementationOnce((id) => {
-  //     if (testBook.id == id) return Promise.resolve({ raw: [], affected: 1 });
-  //   });
-  //
-  //   const result = await service.findAll(testBook.id);
-  //
-  //   expect(result).toMatchObject({ raw: [], affected: 1 });
-  // });
 });

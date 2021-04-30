@@ -109,6 +109,4 @@ describe('ControllerController', () => {
 
     await expect(result).rejects.toThrowError('Not Found');
   });
-
-  it('should return books when call findAll in service', async () => {});
 });
