@@ -16,9 +16,10 @@ import { BookService } from '../../service/book/book.service';
 import { BookDto } from '../../dto/book.dto';
 import { QueryBookDto } from '../../dto/query-book.dto';
 import { PaginatedBooksResultDto } from '../../dto/paginated-books-result.dto';
-import { ApiOperation } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { validate } from 'class-validator';
 
+@ApiTags('Livros')
 @Controller('api/livros')
 export class BookController {
   constructor(private booksService: BookService) {}
