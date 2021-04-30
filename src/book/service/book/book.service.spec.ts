@@ -8,6 +8,20 @@ describe('BookService', () => {
   let service: BookService;
   let bookRepository: Repository<BookEntity>;
 
+  const testBook: BookEntity = {
+    id: '8defd9c5-b079-4227-806d-7283b951c52d',
+    title: 'Prazeres Malditos',
+    isbn: '9788532522498',
+    author: 'Laurell K. Hamilton',
+    publisher: 'Rocco',
+    year: 2013,
+    language: 'Portugês Brasileiro',
+    weight: 200,
+    length: 25,
+    width: 5,
+    height: 15,
+  };
+
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
@@ -31,20 +45,6 @@ describe('BookService', () => {
   });
 
   it('should create a book', async () => {
-    const testBook: BookEntity = {
-      id: '8defd9c5-b079-4227-806d-7283b951c52d',
-      title: 'Prazeres Malditos',
-      isbn: '9788532522498',
-      author: 'Laurell K. Hamilton',
-      publisher: 'Rocco',
-      year: 2013,
-      language: 'Portugês Brasileiro',
-      weight: 200,
-      length: 25,
-      width: 5,
-      height: 15,
-    };
-
     jest
       .spyOn(bookRepository, 'save')
       .mockReturnValueOnce(Promise.resolve(testBook));
@@ -55,20 +55,6 @@ describe('BookService', () => {
   });
 
   it('should update book', async () => {
-    const testBook: BookEntity = {
-      id: '8defd9c5-b079-4227-806d-7283b951c52d',
-      title: 'Prazeres Malditos',
-      isbn: '9788532522498',
-      author: 'Laurell K. Hamilton',
-      publisher: 'Rocco',
-      year: 2013,
-      language: 'Portugês Brasileiro',
-      weight: 200,
-      length: 25,
-      width: 5,
-      height: 15,
-    };
-
     jest.spyOn(bookRepository, 'update').mockImplementationOnce((id, book) => {
       if (id !== testBook.id) {
         return Promise.resolve(null);
@@ -91,20 +77,6 @@ describe('BookService', () => {
   });
 
   it('should delete a book', async () => {
-    const testBook: BookEntity = {
-      id: '8defd9c5-b079-4227-806d-7283b951c52d',
-      title: 'Prazeres Malditos',
-      isbn: '9788532522498',
-      author: 'Laurell K. Hamilton',
-      publisher: 'Rocco',
-      year: 2013,
-      language: 'Portugês Brasileiro',
-      weight: 200,
-      length: 25,
-      width: 5,
-      height: 15,
-    };
-
     jest.spyOn(bookRepository, 'delete').mockImplementationOnce((id) => {
       if (testBook.id == id) return Promise.resolve({ raw: [], affected: 1 });
     });
